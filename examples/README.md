@@ -62,6 +62,73 @@ python examples/satellite_distance.py 25544 20580
 
 **Note:** This requires satellite position data, which may not be available in the free tier. The script will show what data is available.
 
+### 4. `visualize_3d.py` - 3D Earth Visualization
+
+Create an interactive 3D visualization of satellites around Earth.
+
+**Usage:**
+```bash
+# Show up to 50 satellites (default)
+python examples/visualize_3d.py
+
+# Show specific number of satellites
+python examples/visualize_3d.py 100
+```
+
+**Output:** Opens an interactive 3D visualization in your browser and saves as `satellites_3d.html`
+
+**Note:** Requires satellite position data. In the free tier, satellites may not have position data available.
+
+### 5. `visualize_map.py` - 2D Map Visualization
+
+Create an interactive 2D map visualization of satellite positions.
+
+**Usage:**
+```bash
+# Default: 100 satellites, natural earth projection
+python examples/visualize_map.py
+
+# Specify number and projection
+python examples/visualize_map.py 50 orthographic
+python examples/visualize_map.py 200 mercator
+```
+
+**Projections:**
+- `natural earth` - Natural Earth projection (default)
+- `orthographic` - Globe-like orthographic view
+- `mercator` - Mercator projection
+
+**Output:** Opens an interactive map in your browser and saves as HTML file
+
+**Note:** Requires satellite position data. In the free tier, satellites may not have position data available.
+
+**💡 Demo with Sample Data:** If you want to see the visualization working, use:
+```bash
+python examples/visualize_with_sample_data.py 20
+```
+This creates sample satellites with position data so you can see how the visualization works.
+
+### 6. `visualize_with_sample_data.py` - Visualization with Sample Data
+
+Create visualizations using sample satellite position data (for demonstration/testing).
+
+**Usage:**
+```bash
+# Create both 3D and 2D visualizations with 20 sample satellites
+python examples/visualize_with_sample_data.py 20
+
+# Create only 3D visualization
+python examples/visualize_with_sample_data.py 20 3d
+
+# Create only 2D map
+python examples/visualize_with_sample_data.py 20 2d
+
+# Create with more satellites
+python examples/visualize_with_sample_data.py 50 both
+```
+
+**Output:** Creates interactive visualizations with sample position data so you can see how the system works, even without API position data access.
+
 ## Running Examples
 
 Make sure you're in the project root directory and have activated the virtual environment:
